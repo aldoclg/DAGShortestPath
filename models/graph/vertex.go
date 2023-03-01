@@ -13,6 +13,8 @@ type Vertex struct {
 	adjacency   []*Edge
 }
 
+type SortableByDistance []*Vertex
+
 func NewVertex(name string) *Vertex {
 	return &Vertex{name: name, MinDistance: math.MaxUint64, adjacency: make([]*Edge, 0)}
 }
@@ -41,4 +43,8 @@ func (v Vertex) String() string {
 		o = o + fmt.Sprintf(" - %v", v.Predecessor)
 	}
 	return o
+}
+
+func (v *Vertex) Compare(o *Vertex) bool {
+	return v.MinDistance < o.MinDistance
 }
