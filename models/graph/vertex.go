@@ -8,7 +8,7 @@ import (
 type Vertex struct {
 	name        string
 	Visited     bool
-	MinDistance uint64
+	MinDistance float64
 	Predecessor *Vertex
 	adjacency   []*Edge
 }
@@ -16,7 +16,7 @@ type Vertex struct {
 type SortableByDistance []*Vertex
 
 func NewVertex(name string) *Vertex {
-	return &Vertex{name: name, MinDistance: math.MaxUint64, adjacency: make([]*Edge, 0)}
+	return &Vertex{name: name, MinDistance: math.MaxFloat64, adjacency: make([]*Edge, 0)}
 }
 
 func (v *Vertex) AddNeighbor(edge *Edge) {

@@ -24,7 +24,7 @@ func (s *ShortestPath) Compute() {
 		for _, e := range u.GetAdjacency() {
 
 			v := e.GetTarget()
-			fmt.Printf("%v:%d -%d-> %v\n", u.GetName(), u.MinDistance, e.GetWeight(), v.GetName())
+			fmt.Printf("%v:%.1f - %.1f -> %v\n", u.GetName(), u.MinDistance, e.GetWeight(), v.GetName())
 			shortestDistanceCandidate := u.MinDistance + e.GetWeight()
 			if v.MinDistance > shortestDistanceCandidate {
 				v.MinDistance = shortestDistanceCandidate

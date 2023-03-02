@@ -51,6 +51,5 @@ func (q *PriorityQueue[T]) Remove(e T) {
 			q.queue = append(q.queue[:i], q.queue[i+1:]...)
 			return
 		}
-
 	}
 }
